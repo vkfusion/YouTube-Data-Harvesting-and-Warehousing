@@ -1,65 +1,89 @@
-# YouTube-Data-Harvesting-and-Warehousing
-Create a Streamlit application that allows users to access and analyze data from multiple YouTube channels.
+# YouTube Data Harvesting and Warehousing
 
-NAME : Vinoth Kumar S
+A **Streamlit application** designed to allow users to access and analyze data from multiple YouTube channels with ease.
 
-BATCH: DTM-2
+## Project Overview
 
-DOMAIN : DATA SCIENCE
+### Developer Information:
+- **Name**: Vinoth Kumar S
+- **Batch**: DTM-2
+- **Domain**: Data Science
 
+### Application Features:
 
-The application should have the following features:
+1. **Retrieve YouTube Channel Data**:
+   - Input a YouTube channel ID and fetch relevant data using the Google YouTube API.
+   - Data includes:
+     - Channel name
+     - Subscriber count
+     - Total video count
+     - Playlist ID
+     - Video details (ID, likes, dislikes, comments, etc.)
 
-$ Ability to input a YouTube channel ID and retrieve all the relevant data (Channel name, subscribers, total video count, playlist ID, video ID, likes, dislikes, comments of each video) using Google API.
+2. **Store Data in MongoDB Data Lake**:
+   - Save retrieved data into a MongoDB database.
+   - Collect data for up to **10 YouTube channels** and store it in a data lake with a single click.
 
-$ Option to store the data in a MongoDB database as a data lake. Ability to collect data for up to 10 different YouTube channels and store them in the data lake by clicking a button. Option to select a channel name and migrate its data from the data lake to a SQL database as tables.
+3. **Migrate Data to SQL Database**:
+   - Migrate selected channel data from the MongoDB data lake to a SQL database.
+   - Organize data into structured tables.
 
-$ Ability to search and retrieve data from the SQL database using different search options, including joining tables to get channel details.
+4. **Search and Query SQL Database**:
+   - Use advanced search options to retrieve data from the SQL database.
+   - Perform SQL joins to access detailed channel insights.
 
-$ YouTube API: You'll need to use the YouTube API to retrieve channel and video data. You can use the Google API client library for Python to make requests to the API.
+5. **Streamlit App Integration**:
+   - Display all retrieved and analyzed data in an interactive Streamlit app.
+   - User-friendly interface for data visualization and interaction.
 
-$ Store data in a MongoDB data lake: Once you retrieve the data from the YouTube API, you can store it in a MongoDB data lake. MongoDB is a great choice for a data lake because it can handle unstructured and semi-structured data easily.
+## Technical Stack
 
-$ Migrate data to a SQL data warehouse: After you've collected data for multiple channels, you can migrate it to a SQL data warehouse. You can use a SQL database such as MySQL or PostgreSQL for this.
+### APIs and Libraries:
+- **YouTube API**: Retrieve channel and video data.
+- **Google API Client for Python**: Simplify API requests.
+- **MongoDB**: Store unstructured and semi-structured data.
+- **SQL Database**: Use MySQL or PostgreSQL for data warehousing.
+- **SQLAlchemy**: Interact with the SQL database in Python.
+- **Streamlit**: Build an interactive user interface.
 
-$ Query the SQL data warehouse: You can use SQL queries to join the tables in the SQL data warehouse and retrieve data for specific channels based on user input. You can use a Python SQL library such as SQLAlchemy to interact with the SQL database.
+## Configuration
 
-$ Display data in the Streamlit app: Finally, you can display the retrieved data in the Streamlit app. Overall, this approach involves building a simple UI with Streamlit, retrieving data from the YouTube API, storing it in a MongoDB data lake, migrating it to a SQL data warehouse, querying the data warehouse with SQL, and displaying the data in the Streamlit app.
+1. Open the `mainfile.py` in the project directory.
+2. Configure the following:
+   - YouTube API key.
+   - Database connection details for both SQL and MongoDB.
+   - Provide the YouTube Channel ID to harvest data.
+3. Modify additional settings as required.
 
-Configuration:
+## Usage Guide
 
-1.Open the mainfile.py file in the project directory.
+1. **Launch the App**:
+   - Run the command: `streamlit run mainfile.py`.
+   - Ensure `mainfile.py` and SQL files are in the same folder.
+2. **Explore Data**:
+   - Input a YouTube Channel ID to fetch data.
+   - View the harvested data and visualizations in the browser.
 
-2.Set the desired configuration options:
+## Contribution Guidelines
 
-3.Specify your YouTube API key.
+Contributions are always welcome! Follow these steps to contribute:
 
-4.Choose the database connection details (SQL and MongoDB).
+1. **Fork the Repository**.
+2. **Create a New Branch**:
+   ```
+   git checkout -b feature/your-feature-name
+   ```
+3. **Commit Your Changes**:
+   ```
+   git commit -m "Add your commit message here"
+   ```
+4. **Push Your Branch**:
+   ```
+   git push origin feature/your-feature-name
+   ```
+5. **Open a Pull Request**:
+   - Provide a clear explanation of your changes and why they should be merged.
 
-5.Get the Youtube Channel ID from the Youtube's sourcepage
+---
 
-6.provide the Youtube Channel ID data to be harvested.
-
-7.Set other configuration options as needed.
-
-Usage:
-
-1.Launch the Streamlit app: streamlit run mainfile.py
-
-2.Run the mainfile.py script, make sure you have main and sql files in the same folder.
-
-3.The app will start and open in your browser. You can explore the harvested YouTube data and visualize the results.
-
-Contributing:
-
-Contributions are welcome! If you want to contribute to this project, please follow these steps:
-
-1.Fork the repository.
-
-2.Create a new branch: "git checkout -b feature/your-feature-name"
-
-3.Make your modifications and commit the changes: "git commit -m "Add your commit message here"
-
-4.Push your branch: "git push origin feature/your-feature-name"
-
-5.Open a pull request on the GitHub repository, explaining the changes you made and why they should be merged.
+**Explore the power of YouTube data harvesting with this streamlined application!**
