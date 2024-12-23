@@ -48,7 +48,7 @@ A **Streamlit application** designed to allow users to access and analyze data f
 
 ## Configuration
 
-1. Open the `mainfile.py` in the project directory.
+1. Open the `file.py` in the project directory.
 2. Configure the following:
    - YouTube API key.
    - Database connection details for both SQL and MongoDB.
@@ -58,8 +58,8 @@ A **Streamlit application** designed to allow users to access and analyze data f
 ## Usage Guide
 
 1. **Launch the App**:
-   - Run the command: `streamlit run mainfile.py`.
-   - Ensure `mainfile.py` and SQL files are in the same folder.
+   - Run the command: `streamlit run file.py`.
+   - Ensure `file.py` and SQL files are in the same folder.
 2. **Explore Data**:
    - Input a YouTube Channel ID to fetch data.
    - View the harvested data and visualizations in the browser.
