@@ -179,7 +179,7 @@ if selected == 'Home':
                 )
             st.write(f'<h1 style="color:#B0C4DE; font-size: 20px;">A data scientist skilled in extracting actionable insights from complex datasets, adept at employing advanced analytics and machine learning techniques to solve real-world problems. Proficient in Python, statistical modeling, and data visualization, with a strong commitment to driving data-driven decision-making.</h1>', unsafe_allow_html=True)    
 
-            st.write("[view more projects >](https://github.com/vinothkumarpy?tab=repositories)")
+            st.write("[view more projects >](https://github.com/Vk-lap?tab=repositories)")
 
         with col2:
             st_lottie(lottie_coding, height=400, key="coding")    
@@ -217,7 +217,7 @@ if selected == 'Home':
         st.write(f'<h1 style="color:#B0C4DE; font-size: 30px;">Crafted an engaging and user-friendly interface for seamless data exploration and presentation.</h1>', unsafe_allow_html=True)
 
         
-        st.markdown("[🔗 GitHub Repo >](https://github.com/vinothkumarpy/Youtube_project.git)")    
+        st.markdown("[🔗 GitHub Repo >](https://github.com/Vk-lap/YouTube-Data-Harvesting-and-Warehousing.git)")    
 
 
 
