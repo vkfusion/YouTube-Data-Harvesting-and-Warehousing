@@ -64,25 +64,6 @@ A **Streamlit application** designed to allow users to access and analyze data f
    - Input a YouTube Channel ID to fetch data.
    - View the harvested data and visualizations in the browser.
 
-## Contribution Guidelines
-
-Contributions are always welcome! Follow these steps to contribute:
-
-1. **Fork the Repository**.
-2. **Create a New Branch**:
-   ```
-   git checkout -b feature/your-feature-name
-   ```
-3. **Commit Your Changes**:
-   ```
-   git commit -m "Add your commit message here"
-   ```
-4. **Push Your Branch**:
-   ```
-   git push origin feature/your-feature-name
-   ```
-5. **Open a Pull Request**:
-   - Provide a clear explanation of your changes and why they should be merged.
 
 ---
 
