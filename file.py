@@ -7,25 +7,24 @@ import mysql.connector as sql
 from googleapiclient.discovery import build
 from datetime import datetime
 from streamlit import *
-from streamlit_extras import *
-from streamlit_lottie import *
-from streamlit_option_menu import *
 from streamlit_lottie import st_lottie
 import json as js
 import requests
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 pd.set_option('display.max_columns', None)
 
 # Set page configuration and title
 st.set_page_config(page_title="YouTube Data Harvesting and Warehousing | by vinothkumar", layout="wide")
 
-# Set option menu
+# option menu 
 
 
 selected = option_menu(
     menu_title="Youtupe Analysis",
-    options=['Home', 'Migrate and Store', 'View', 'Thank You'],
-    icons=['mic-fill', 'cash-stack', 'phone-flip', "handshake"],
+    options=['Home', 'Migrate and Store', 'View'],
+    icons=['mic-fill', 'cash-stack', 'phone-flip'],
     menu_icon='alexa',
     default_index=0,
 )
@@ -145,7 +144,7 @@ def get_channel_name():
     return channel_names
 
 
-
+#Lottie file viwer function
 def lottie(filepath):
     with open(filepath, 'r') as file:
         return js.load(file)
@@ -163,9 +162,9 @@ if selected == 'Home':
         with open(file_name) as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-    local_css(r"V:\project\vk_project\youtupe\style.css")
+    
 
-    lottie_coding = lottie(r"V:\project\vk_project\lottiite animation\intro vk.json")
+    lottie_coding = lottie(r"V:\VKfusion\LOTTIE FILE\Intro .json")
 
 
     # ---- HEADER SECTION -----``
@@ -190,15 +189,15 @@ if selected == 'Home':
         col1,col2,col3=st.columns(3)
 
         with col1:
-            file = lottie(r"V:\project\vk_project\lottiite animation\data science.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\data science.json")
             st_lottie(file,height=300,key=None)
 
         with col2:
             st.markdown( f"<h1 style='font-size: 70px;text-align: center;'><span style='color: #00BFFF;'> WHAT  </span><span style='color: white;'> I DO </h1>",unsafe_allow_html=True)
-            file=lottie(r'V:\project\vk_project\youtupe\icon.json')
+            file=lottie(r'V:\VKfusion\LOTTIE FILE\icon toutupe.json')
             st_lottie(file,height=500,key=None)
         with col3:
-            file = lottie(r"V:\project\vk_project\lottiite animation\working with data set.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Working.json")
             st_lottie(file,height=300,key=None)    
         
         st.markdown( f"<h1 style='font-size: 40px;'><span style='color: #00BFFF;'>Retrieving data from the  </span><span style='color: white;'>YouTube API</h1>",unsafe_allow_html=True)
@@ -228,44 +227,44 @@ if selected == 'Home':
         col1,col2,col3 =st.columns(3)
         with col1:
             
-            file = lottie(r"V:\project\vk_project\lottiite animation\python.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Python.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>python</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
-            file = lottie(r"V:\project\vk_project\lottiite animation\Mongo.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Mongo db.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>Mongo-DB</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
-            file = lottie(r"V:\project\vk_project\lottiite animation\data_exploaration.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Data Exploration.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>Data Exploaration</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
         with col2:
 
-            file = lottie(r"V:\project\vk_project\youtupe\abi integration.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\ABI integration.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>API Integration</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
-            file = lottie(r"V:\project\vk_project\youtupe\Data Fetching.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\data fetch.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>Data Fetching</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
-            file = lottie(r"V:\project\vk_project\lottiite animation\database.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Data Base.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>DataBase</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
             
 
         with col3:    
-            file = lottie(r"V:\project\vk_project\lottiite animation\data collection.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Data Collection.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>Data Collection</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
-            file = lottie(r"V:\project\vk_project\lottiite animation\Data cleaning.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Data Cleaning.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>Data Cleaning</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
-            file = lottie(r"V:\project\vk_project\lottiite animation\frame work.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Frame work.json")
             st.markdown("<h1 style='color: #00BFFF; text-align: center; font-size: 30px;'>Web application development with Streamlit</h1>", unsafe_allow_html=True)
             st_lottie(file,height=200,key=None)
 
@@ -279,7 +278,7 @@ if selected == 'Home':
         st.markdown( f"<h1 style='font-size: 70px;'><span style='color: #00BFFF;'> About  </span><span style='color: white;'> Projects </h1>",unsafe_allow_html=True)
         col1,col2=st.columns(2)
         with col1:
-            file = lottie(r"V:\project\vk_project\youtupe\icon_2.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\Youtupe icon.json")
             st_lottie(file,height=300,key=None)
         with col2:
             st.write("##")
@@ -323,7 +322,7 @@ if selected == "Migrate and Store":
 
         col1,col2=st.columns(2)
         with col1:
-            file = lottie(r"V:\project\vk_project\youtupe\file transfer.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\File Transfer.json")
             st_lottie(file,height=300,key=None)
         with col2:
             st.write("")
@@ -358,7 +357,7 @@ if selected == "Migrate and Store":
     if button and option == 'TRANSFORM':  
         col1,col2=st.columns(2)
         with col1:
-            file = lottie(r"V:\project\vk_project\youtupe\store.json")
+            file = lottie(r"V:\VKfusion\LOTTIE FILE\sql db.json")
             st_lottie(file,height=300,key=None)
         with col2:
             st.write("")
@@ -373,7 +372,7 @@ if selected == "Migrate and Store":
 
     def insert_into_channels():
         coll_channel=db.channel_details                          
-        query = "INSERT INTO channel_data (channel_id, channel_name, channel_description, subscribers, channel_views, channel_total_videos, playlist_id, channel_country) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO channel_details (channel_id, channel_name, channel_description, subscribers, channel_views, channel_total_videos, playlist_id, channel_country) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
         for channel in coll_channel.find(user_inp):
             values = (channel["channel_id"],
                       channel["channel_name"], 
@@ -413,7 +412,7 @@ if selected == "Migrate and Store":
 
     # Insert data into MySQL
             cursor.execute("""
-                           INSERT INTO video_data
+                           INSERT INTO video_details
                            (channel_name, channel_id, video_id, title, thumbnail, Description, Published_date, Duration, Views, Likes, Comments, Favorite_count, Definition, Caption_status)
                            VALUES (%(channel_name)s, %(channel_id)s, %(video_id)s, %(title)s, %(thumbnail)s, %(Description)s, %(Published_date)s, %(Duration)s, %(Views)s, %(Likes)s, %(Comments)s, %(Favorite_count)s, %(Definition)s, %(Caption_status)s)
                            """, data)
@@ -434,12 +433,12 @@ if selected == "View":
 
     col1,col2=st.columns(2)
     with col1:
-        file=lottie(r"V:\project\vk_project\lottiite animation\working with data set.json")
+        file=lottie(r"V:\VKfusion\LOTTIE FILE\Working.json")
         st_lottie(file,height=300,key=None)
 
     with col2:
-        st.markdown( f"<h1 style='font-size: 40px;'><span style='color: #00BFFF;'> Data Analysis </span><span style='color: white;'>section </h1>",unsafe_allow_html=True)
-   
+        st.markdown( f"<h1 style='font-size: 40px;'><span style='color: #00BFFF;'> Data Insight </span><span style='color: white;'>Report</h1>",unsafe_allow_html=True)
+        st.write("##")
     st.markdown( f"<h1 style='font-size: 40px;'><span style='color: #00BFFF;'> Select any question </span><span style='color: white;'>to get Insights </h1>",unsafe_allow_html=True)
    
     questions = st.selectbox('Questions',
@@ -457,7 +456,7 @@ if selected == "View":
     
     if questions == '1. What are the names of all the videos and their corresponding channels?':
         cursor.execute("""SELECT title AS Video_name, channel_name AS Channel_Name
-                            FROM video_data
+                            FROM video_details
                             ORDER BY channel_name""")
         df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
         # Plotting the vertical bar chart for the distribution of videos across channels using Plotly
@@ -477,7 +476,7 @@ if selected == "View":
 
     elif questions == '2. Which channels have the most number of videos, and how many videos do they have?':
         cursor.execute("""SELECT channel_name AS Channel_Name, channel_total_videos AS Total_Videos
-                            FROM channel_data
+                            FROM channel_details
                             ORDER BY total_videos DESC limit 1""")
         df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
         col1,col2=st.columns(2)
@@ -497,7 +496,7 @@ if selected == "View":
         
     elif questions == '3. What are the top 10 most viewed videos and their respective channels?':
         cursor.execute("""SELECT channel_name AS Channel_Name, title AS Video_Title, views AS Views 
-                            FROM video_data
+                            FROM video_details
                             ORDER BY views DESC
                             LIMIT 10""")
         df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
@@ -519,7 +518,7 @@ if selected == "View":
         st.plotly_chart(fig, use_container_width=True)
         
     elif questions == '4. How many comments were made on each video, and what are their corresponding video names?':
-        cursor.execute("""SELECT channel_name, video_id, title, comments FROM video_data ORDER BY comments DESC LIMIT 10;""")
+        cursor.execute("""SELECT channel_name, video_id, title, comments FROM video_details ORDER BY comments DESC LIMIT 10;""")
         df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
         st.dataframe(df)
 
@@ -538,7 +537,7 @@ if selected == "View":
         st.plotly_chart(fig, use_container_width=True)
           
     elif questions == '5. Which videos have the highest number of likes, and what are their corresponding channel names?':
-        cursor.execute("""SELECT channel_name AS Channel_Name,title AS Title,likes AS likes FROM video_data ORDER BY likes DESC LIMIT 10;""")
+        cursor.execute("""SELECT channel_name AS Channel_Name,title AS Title,likes AS likes FROM video_details ORDER BY likes DESC LIMIT 10;""")
         df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
         st.dataframe(df)
         st.write("### :white[Top 10 most liked videos :]")
@@ -551,7 +550,7 @@ if selected == "View":
         st.plotly_chart(fig,use_container_width=True)
         
     elif questions == '6. What is the total number of likes and dislikes for each video, and what are their corresponding video names?':
-        cursor.execute("""SELECT title AS Title, likes AS likes FROM video_data ORDER BY likes DESC;""")
+        cursor.execute("""SELECT title AS Title, likes AS likes FROM video_details ORDER BY likes DESC;""")
         df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
         
         st.dataframe(df)
@@ -560,7 +559,7 @@ if selected == "View":
 
          
     elif questions == '7. What is the total number of views for each channel, and what are their corresponding channel names?':
-        cursor.execute("""SELECT channel_name AS Channel_Name, channel_views AS views FROM channel_data ORDER BY channel_views DESC;""")
+        cursor.execute("""SELECT channel_name AS Channel_Name, channel_views AS views FROM channel_details ORDER BY channel_views DESC;""")
         
         df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
         st.dataframe(df)
@@ -578,7 +577,7 @@ if selected == "View":
     elif questions == '8. What are the names of all the channels that have published videos in the year 2022?':
         cursor.execute("""SELECT title AS Channel_Name,
                        MAX(Published_date) AS LatestVideoRelease  -- Use an aggregate function like MAX
-                       FROM video_data
+                       FROM video_details
                        WHERE published_date LIKE '2022%'
                        GROUP BY title
                        ORDER BY title;;""")
@@ -597,8 +596,8 @@ if selected == "View":
     
     elif questions == '9. What is the duration of top_10 videos in each channel, and what are their corresponding channel names?':
         cursor.execute("""SELECT v.title AS video_Name, MAX(v.duration) AS highest_duration, c.channel_name
-                       FROM video_data v
-                       JOIN channel_data c ON v.channel_id = c.channel_id
+                       FROM video_details v
+                       JOIN channel_details c ON v.channel_id = c.channel_id
                        GROUP BY v.title, c.channel_name
                        ORDER BY highest_duration DESC
                        LIMIT 10;""")
@@ -615,10 +614,12 @@ if selected == "View":
       
         
     elif questions == '10. Which videos have the highest number of comments, and what are their corresponding channel names?':
-        cursor.execute("""SELECT title AS Channel_Name,video_id AS Video_ID,comments AS Comments FROM video_data ORDER BY comments DESC LIMIT 10;""")
+        cursor.execute("""SELECT title AS Channel_Name,video_id AS Video_ID,comments AS Comments FROM video_details ORDER BY comments DESC LIMIT 10;""")
         df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
         st.dataframe(df)
-        st.write("### :white[Videos with most comments :]")
+        st.markdown('<h3 style="color:white;">Videos with most comments :</h3>', unsafe_allow_html=True)
+
+        
         fig = px.bar(df,
                      x=cursor.column_names[1],
                      y=cursor.column_names[2],
@@ -626,11 +627,3 @@ if selected == "View":
                      color=cursor.column_names[0]
                     )
         st.plotly_chart(fig,use_container_width=True)
-
-
-if selected == "Thank You":
-    with st.container():
-        col1,col2,col3,col4,col5=st.columns(5)
-        with col3:
-            file = lottie(r"V:\project\vk_project\lottiite animation\thnak you.json")
-            st_lottie(file,height=500,key=None)        
